@@ -78,3 +78,12 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
+git
+ansible
+python-pexpect
+rsync
+networkmanager
+pyalpm
+fakeroot
+reflector
+nvme-cli
