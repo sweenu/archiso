@@ -24,4 +24,7 @@ systemctl set-default multi-user.target
 systemctl enable NetworkManager.service
 
 git clone https://github.com/Sweenu/setup /root
+
+# Install pikaur using itself
 git clone https://github.com/actionless/pikaur /root
+python /root/pikaur/pikaur.py -S pikaur --noconfirm
