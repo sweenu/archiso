@@ -30,11 +30,9 @@ systemctl enable NetworkManager.service
 useradd -mG wheel sweenu
 sed -i '/# %wheel ALL=(ALL) NOPASSWD: ALL/s/^#//g' /etc/sudoers
 
-## As user sweenu ##
-su sweenu
 # Clone setup repo
-git clone https://github.com/Sweenu/setup /home/sweenu/setup
+sudo -u sweenu git clone https://github.com/Sweenu/setup /home/sweenu/setup
 
 # Install pikaur using itself
-git clone https://github.com/actionless/pikaur /home/sweenu/pikaur
-python /home/sweenu/pikaur/pikaur.py -S pikaur --noconfirm
+sudo -u sweenu git clone https://github.com/actionless/pikaur /home/sweenu/pikaur
+sudo -u sweenu python /home/sweenu/pikaur/pikaur.py -S pikaur --noconfirm
