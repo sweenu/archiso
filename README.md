@@ -6,9 +6,11 @@ A custom archiso with some programs installed by default and my
 
 ## Additional programs
 
+- base-devel
 - git
 - networkmanager
 - pyalpm
+- pikaur (from AUR, using itself)
 
 To run the setup:
 - ansible
@@ -26,6 +28,6 @@ Kernel option for usb live boot:
 ## Customized airootfs
 
 - Enable NetworkManager by default
-- Clone https://github.com/Sweenu/setup to /root
-- Clone https://github.com/actionless/pikaur to /root
+- Create user Sweenu in wheel group
+- Clone https://github.com/Sweenu/setup to /home/sweenu/
 - Install pikaur

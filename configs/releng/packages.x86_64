@@ -78,6 +78,7 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
+base-devel
 git
 ansible
 python-pexpect

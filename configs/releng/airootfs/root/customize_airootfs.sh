@@ -21,10 +21,20 @@ sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
 systemctl enable pacman-init.service choose-mirror.service
 systemctl set-default multi-user.target
+
+#### Customization ####
+# Enable NetworkManager
 systemctl enable NetworkManager.service
 
-git clone https://github.com/Sweenu/setup /root
+# Create non sudo user in wheel group
+useradd -mG wheel sweenu
+sed -i '/# %wheel ALL=(ALL) NOPASSWD: ALL/s/^#//g' /etc/sudoers
+
+## As user sweenu ##
+su sweenu
+# Clone setup repo
+git clone https://github.com/Sweenu/setup /home/sweenu/setup
 
 # Install pikaur using itself
-git clone https://github.com/actionless/pikaur /root
-python /root/pikaur/pikaur.py -S pikaur --noconfirm
+git clone https://github.com/actionless/pikaur /home/sweenu/pikaur
+python /home/sweenu/pikaur/pikaur.py -S pikaur --noconfirm
